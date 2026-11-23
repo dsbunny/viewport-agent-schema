@@ -1,0 +1,31 @@
+{
+	"name": "@dsbunny/viewport-agent-schema",
+	"version": "3.0.3",
+	"description": "Schema for Viewport Agent API",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"author": "Steve-o <fnjordy@gmail.com>",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"build": "tsc",
+		"clean": "rm -rf dist node_modules package-lock.json",
+		"pull:upstream": "./scripts/pull-upstream.sh",
+		"rebuild": "npm run clean && npm run pull:upstream && npm install && npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@dsbunny/error-schema": "github:dsbunny/error-schema#ee6c4fe",
+		"@dsbunny/webhook-schema": "github:dsbunny/webhook-schema#dcc50dc",
+		"@dsbunny/zod-registry": "github:dsbunny/zod-registry#35c7ef6",
+		"typescript": "^5.9.3",
+		"zod": "^4.3.6"
+	},
+	"peerDependencies": {
+		"@dsbunny/error-schema": "github:dsbunny/error-schema",
+		"@dsbunny/webhook-schema": "github:dsbunny/webhook-schema",
+		"@dsbunny/zod-registry": "github:dsbunny/zod-registry",
+		"zod": "^4.3.0"
+	}
+}
