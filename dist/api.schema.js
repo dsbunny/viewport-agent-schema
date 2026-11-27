@@ -3,6 +3,13 @@
 import * as z from "zod";
 import { dsbunnyRegistry } from '@dsbunny/zod-registry';
 import { ErrorResponseSchema } from "@dsbunny/error-schema";
+export const ViewportAgentPingResponseSchema = z.object({
+    ping: z.literal('pong'),
+    timestamp: z.iso.datetime(),
+}).register(dsbunnyRegistry, {
+    id: 'ViewportAgentPingResponseSchema',
+    description: 'Viewport Agent ping response schema',
+});
 export const GetScreenshotRequestSchema = z.object({
     '@type': z.literal('GetScreenshotRequest')
         .describe('Type of the get screenshot request'),

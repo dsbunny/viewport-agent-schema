@@ -1,4 +1,9 @@
 import * as z from "zod";
+export declare const ViewportAgentPingResponseSchema: z.ZodObject<{
+    ping: z.ZodLiteral<"pong">;
+    timestamp: z.ZodISODateTime;
+}, z.core.$strip>;
+export type ViewportAgentPingResponse = z.infer<typeof ViewportAgentPingResponseSchema>;
 export declare const GetScreenshotRequestSchema: z.ZodOptional<z.ZodObject<{
     '@type': z.ZodLiteral<"GetScreenshotRequest">;
 }, z.core.$strip>>;
